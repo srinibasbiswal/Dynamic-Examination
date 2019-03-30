@@ -38,34 +38,34 @@
               </ul>
               <ul class="uk-switcher uk-margin">                
                 <li>
-                  <form>
+                  <form action="php/login.php" method="post">
                     <fieldset class="uk-fieldset">
                       <div class="uk-margin">
-                        <input class="uk-input" type="email" placeholder="Email">
+                        <input class="uk-input" type="email" name="email" placeholder="Email">
                       </div>
                       <div class="uk-margin">
-                        <input class="uk-input" type="password" placeholder="Password">
+                        <input class="uk-input" type="password" name="password" placeholder="Password">
                       </div>
                       <div class="uk-margin">
-                        <button class="uk-button uk-button-default">Login</button>
+                        <button class="uk-button uk-button-default" type="submit">Login</button>
                       </div>
                     </fieldset>
                   </form>
                 </li>
                 <li>
-                    <form>
+                    <form action="php/signup.php" method="post" >
                       <fieldset class="uk-fieldset">
                         <div class="uk-margin">
-                          <input class="uk-input" type="text" placeholder="Name">
+                          <input class="uk-input" type="text" name="name" placeholder="Name">
                         </div>
                         <div class="uk-margin">
-                          <input class="uk-input" type="number" placeholder="Contact Number">
+                          <input class="uk-input" type="number" name="contact_number" placeholder="Contact Number">
                         </div>
                         <div class="uk-margin">
-                          <input class="uk-input" type="email" placeholder="Email">
+                          <input class="uk-input" type="email" name="email" placeholder="Email">
                         </div>
                         <div class="uk-margin">
-                          <input class="uk-input" type="password" placeholder="Password">
+                          <input class="uk-input" type="password" name="password" placeholder="Password">
                         </div>
                         <div class="uk-margin">
                           <button class="uk-button uk-button-default">SignUp</button>
