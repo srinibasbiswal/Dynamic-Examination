@@ -1,3 +1,33 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.php");
+    exit;
+}
+
+$file= file_get_contents('questionSet/level1.json');
+$questions = json_decode($file,true);
+echo $_SESSION['difficultyLevel'];
+echo $_SESSION['questionNumber'];
+
+if ($_SESSION['difficultyLevel'] <= 2){
+    $_SESSION['questionLevel'] = "level1";
+}elseif ($_SESSION['difficultyLevel'] >= 3 && $_SESSION['difficultyLevel'] <= 4) {
+    $_SESSION['questionLevel'] = "level2";
+}
+elseif ($_SESSION['difficultyLevel'] >= 5 && $_SESSION['difficultyLevel'] <= 6) {
+    $_SESSION['questionLevel'] = "level3";
+}
+elseif ($_SESSION['difficultyLevel'] >= 7 && $_SESSION['difficultyLevel'] <= 8) {
+    $_SESSION['questionLevel'] = "level4";
+}else {
+    echo "Error Occured ! Contact Admin";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +58,11 @@
      <div uk-grid>
        <div class="uk-width-2-3">
          <div class="uk-card uk-card-default uk-card-body uk-margin uk-margin-medium-left">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <p>
+            <?php
+                echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['question'];
+            ?>
+          </p>
          </div>
          <div class="uk-card uk-card-default uk-card-body uk-margin-medium-left uk-overflow-auto">
           <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
@@ -36,25 +70,41 @@
               <tr>
                 <td><input class="uk-checkbox" type="checkbox"></td>
                 <td class="uk-table-link">
-                  <a class="uk-link-reset" href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a>
+                  <a class="uk-link-reset" href="">
+                    <?php
+                        echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option1'];
+                    ?>
+                  </a>
                 </td>
               </tr>
               <tr>
                 <td><input class="uk-checkbox" type="checkbox"></td>
                 <td class="uk-table-link">
-                  <a class="uk-link-reset" href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a>
+                  <a class="uk-link-reset" href="">
+                    <?php
+                        echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option2'];
+                    ?>
+                  </a>
                 </td>
               </tr>
               <tr>
                 <td><input class="uk-checkbox" type="checkbox"></td>
                 <td class="uk-table-link">
-                  <a class="uk-link-reset" href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a>
+                  <a class="uk-link-reset" href="">
+                    <?php
+                        echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option3'];
+                    ?>
+                  </a>
                 </td>
               </tr>
               <tr>
                 <td><input class="uk-checkbox" type="checkbox"></td>
                 <td class="uk-table-link">
-                  <a class="uk-link-reset" href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</a>
+                  <a class="uk-link-reset" href="">
+                    <?php
+                        echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option4'];
+                    ?>
+                  </a>
                 </td>
               </tr>
             </tbody>

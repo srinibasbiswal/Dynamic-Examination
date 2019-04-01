@@ -1,3 +1,14 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.php");
+    exit;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,8 +29,8 @@
 
       <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
-          <li class="uk-active"><a href="#">Hi! UserName</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li class="uk-active"><a href="#">Hi! <?php echo htmlspecialchars($_SESSION["name"]); ?></a></li>
+          <li><a href="php/logout.php">Log Out</a></li>
         </ul>
       </div>
     </nav>
