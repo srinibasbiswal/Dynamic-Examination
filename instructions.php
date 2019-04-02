@@ -48,7 +48,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
           </div>
       </div>
       <div class="uk-margin">
-       <button class="uk-button uk-button-primary">Start Test</button>
+       <a class="uk-button uk-button-primary" href="test.php">Start Test</a>
       </div>
     </div>
 

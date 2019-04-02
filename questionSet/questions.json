@@ -1,0 +1,251 @@
+{
+    "level1" : [
+        {
+            "question" : "What is the capital of India?",
+            "option1" : "Bhubaneswar",
+            "option2" : "Mumbai",
+            "option3" : "New Delhi",
+            "option4" : "None of the above",
+            "correctOption" : "option3"
+        },
+        {
+            "question" : "Who was the founder of Java?",
+            "option1" : "Steve Jobs",
+            "option2" : "Sunder Pichai",
+            "option3" : "Amit Shah",
+            "option4" : "James Gosling",
+            "correctOption" : "option4"
+        },
+		{
+            "question" : "Who is the chief minister of Odisha?",
+            "option1" : "Shri Naveen Pattnaik",
+            "option2" : "Shri Jewel Oram",
+            "option3" : "Shri Kanakbardhan Singhdeo",
+            "option4" : "All of the above",
+            "correctOption" : "option1"
+        },
+		{
+            "question" : "What is the capital of Odisha?",
+            "option1" : "Bhubaneswar",
+            "option2" : "Khurda",
+            "option3" : "Cuttack",
+            "option4" : "Baripada",
+            "correctOption" : "option1"
+        },
+		{
+            "question" : "What was the capital of Odisha?",
+            "option1" : "Bhubaneswar",
+            "option2" : "Khurda",
+            "option3" : "Cuttack",
+            "option4" : "Baripada",
+            "correctOption" : "option3"
+        },
+		{
+            "question" : "Which is the river near Dhauli Stupa?",
+            "option1" : "Prachi River",
+            "option2" : "Daya River",
+            "option3" : "Mahanadi",
+            "option4" : "Kathajodi",
+            "correctOption" : "option2"
+        },
+		{
+            "question" : "Which is the largest state of India by area?",
+            "option1" : "Rajasthan",
+            "option2" : "Maharashtra",
+            "option3" : "Uttar Pradesh",
+            "option4" : "Madhya Pradesh",
+            "correctOption" : "option1"
+        },
+		{
+            "question" : "What is the full form of computer and electronics manufacturer HP?",
+            "option1" : "Hindustan Petroleum",
+            "option2" : "Hewlett Packard",
+            "option3" : "HyPer",
+            "option4" : "None of the above",
+            "correctOption" : "option2"
+        },
+		{
+            "question" : "Which is the most populated country in the world?",
+            "option1" : "Russia",
+            "option2" : "Mexico",
+            "option3" : "China",
+            "option4" : "India",
+            "correctOption" : "option3"
+        },
+		{
+            "question" : "Who is the largest mammal in the world?",
+            "option1" : "Dinosaurs",
+            "option2" : "Blue Whale",
+            "option3" : "Orangutan",
+            "option4" : "King Cobra",
+            "correctOption" : "option2"
+        }
+    ],
+
+    "level2" : [
+        {
+            "question" : "What is the full form of IPL?",
+            "option1" : "Indian Premier League",
+            "option2" : "International Premier League",
+            "option3" : "Indian Premier Logistics",
+            "option4" : "None of the above",
+            "correctOption" : "option1"
+        },
+        {
+            "question" : "Who plays for Mumbai Indians?",
+            "option1" : "Mukesh Ambani",
+            "option2" : "Rohit Sharma",
+            "option3" : "Both the above",
+            "option4" : "Suresh raina",
+            "correctOption" : "option2"
+        },
+		{
+            "question" : "Between which two countries Ashes is played?",
+            "option1" : "India vs Pakistan",
+            "option2" : "SA vs NZ",
+            "option3" : "ENG vs Pak",
+            "option4" : "ENG vs AUS",
+            "correctOption" : "option4"
+        },
+		{
+            "question" : "What is burnt and kept(reputedly) in the Ashes trophy?",
+            "option1" : "Ball",
+            "option2" : "Bail",
+            "option3" : "Bat",
+            "option4" : "Pad",
+            "correctOption" : "option2"
+        },
+		{
+            "question" : "What is the full form of ICC?",
+            "option1" : "International Cricket Council",
+            "option2" : "Indian Cricket Council",
+            "option3" : "Both of above",
+            "option4" : "None of the above",
+            "correctOption" : "option1"
+        },
+		{
+            "question" : "Where is the headquarters of ICC located?",
+            "option1" : "Mumbai",
+            "option2" : "London",
+            "option3" : "Australia",
+            "option4" : "Dubai",
+            "correctOption" : "option4"
+        },
+		{
+            "question" : "Who is the considered as the god of cricket?",
+            "option1" : "Vivian Richards",
+            "option2" : "Sunil Gavaskar",
+            "option3" : "M.S.Dhoni",
+            "option4" : "Sachin Ramesh Tendulkar",
+            "correctOption" : "option4"
+        },
+		{
+            "question" : "Who realised the money-making potential of cricket?",
+            "option1" : "Kerry Packer",
+            "option2" : "Marry T Barra",
+            "option3" : "Mike David",
+            "option4" : "Shawn Pitt",
+            "correctOption" : "option1"
+        },
+		{
+            "question" : "Usually how many deliveries are done in an over?",
+            "option1" : "5",
+            "option2" : "6",
+            "option3" : "8",
+            "option4" : "12",
+            "correctOption" : "option2"
+        },
+		{
+            "question" : "If a batsman is out for the very first ball he faced what is called?",
+            "option1" : "Mallard Duck",
+            "option2" : "Golden goose",
+            "option3" : "Golden Duck",
+            "option4" : "None of the above",
+            "correctOption" : "option3"
+        }
+    ],
+
+    "level3" : [
+        {
+            "question" : "What is the deepest part on Earth?",
+            "option1" : "Politician's Pocket",
+            "option2" : "Marina Trench",
+            "option3" : "Mt. Everest",
+            "option4" : "None of the above",
+            "correctOption" : "option2"
+        },
+        {
+            "question" : "What is the name of the direwolf of Sansa Stark?",
+            "option1" : "Ghost",
+            "option2" : "Lady",
+            "option3" : "Nymeria",
+            "option4" : "None of the above",
+            "correctOption" : "option2"
+        },
+		{
+            "question" : "What is the colour of Jon Snow's direwolf's eye?",
+            "option1" : "Black",
+            "option2" : "Red",
+            "option3" : "Green",
+            "option4" : "Blue",
+            "correctOption" : "option2"
+        },
+        {
+            "question" : "What is the name of the actor playing Dr. Sheldon Cooper?",
+            "option1" : "Leonard Hofstader",
+            "option2" : "Howard Wolowitz",
+            "option3" : "Jim Parsons",
+            "option4" : "Rajesh Koothrapalli",
+            "correctOption" : "option3"
+        },
+        {
+            "question" : "How many officers in Indian Army have rose to the rank of Field Marshal?",
+            "option1" : "0",
+            "option2" : "1",
+            "option3" : "2",
+            "option4" : "3",
+            "correctOption" : "option2"
+        },
+        {
+            "question" : "David Cameron held the position of PM of which country?",
+            "option1" : "UK",
+            "option2" : "India",
+            "option3" : "Greece",
+            "option4" : "France",
+            "correctOption" : "option1"
+        },
+        {
+            "question" : "Who is the acting CJI(Chief Justice of India)?",
+            "option1" : "Hon'ble Justice H.J Kania ",
+            "option2" : "Hon'ble Justice Rajan Gogoi",
+            "option3" : "Hon'ble Justice Dipak Misra",
+            "option4" : "None of the above",
+            "correctOption" : "option2"
+        },
+        {
+            "question" : "As what officer did NSA Ajit Doval join the Govt. of India?",
+            "option1" : "IAS",
+            "option2" : "IPS",
+            "option3" : "IRS",
+            "option4" : "RAW Officer",
+            "correctOption" : "option2"
+        },
+        {
+            "question" : "Who is the actor well known to be playing the role of Mahatma Gandhi in the Academy award winning movie Gandhi?",
+            "option1" : "Robert De Niro",
+            "option2" : "Samuel L. Jackson",
+            "option3" : "Jamie Foxx",
+            "option4" : "Sir Ben Kingsley",
+            "correctOption" : "option4"
+        },
+        {
+            "question" : "In which year did Jawaharlal Nehru award himself Bharat Ratna?",
+            "option1" : "1971",
+            "option2" : "1955",
+            "option3" : "1975",
+            "option4" : "2001",
+            "correctOption" : "option2"
+        }
+    ]
+
+}

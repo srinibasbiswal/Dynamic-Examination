@@ -1,3 +1,15 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: index.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,8 +30,8 @@
 
       <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
-          <li class="uk-active"><a href="#">Hi! UserName</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li class="uk-active"><a href="#">Hi! <?php echo $_SESSION['name'] ?></a></li>
+          <li><a href="php/logout.php">Log Out</a></li>
         </ul>
       </div>
     </nav>
@@ -30,9 +42,9 @@
         <div class="uk-card uk-card-default uk-card-body uk-width-1-2">
             <h3>Your Results</h3>
             <ul class="uk-list uk-list-striped">
-              <li>Total Questions : </li>
-              <li>Total Correct Answers : </li>
-              <li>Total Marks Secured : </li>
+              <li>Total Questions : <?php echo $_SESSION['questionNumber'];?></li>
+              <li>Total Correct Answers : <?php echo $_SESSION['totalCorrectAnswer']; ?> </li>
+              <li>Total Marks Secured : <?php echo $_SESSION['marks'];?></li>
           </ul>
         </div>
     </div>

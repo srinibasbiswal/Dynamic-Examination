@@ -8,24 +8,26 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     exit;
 }
 
-$file= file_get_contents('questionSet/level1.json');
+$file= file_get_contents('questionSet/questions.json');
 $questions = json_decode($file,true);
-echo $_SESSION['difficultyLevel'];
-echo $_SESSION['questionNumber'];
 
 if ($_SESSION['difficultyLevel'] <= 2){
     $_SESSION['questionLevel'] = "level1";
+    $_SESSION['currentQuestionmark'] = 2;
 }elseif ($_SESSION['difficultyLevel'] >= 3 && $_SESSION['difficultyLevel'] <= 4) {
     $_SESSION['questionLevel'] = "level2";
+    $_SESSION['currentQuestionmark'] = 4;
 }
 elseif ($_SESSION['difficultyLevel'] >= 5 && $_SESSION['difficultyLevel'] <= 6) {
     $_SESSION['questionLevel'] = "level3";
-}
-elseif ($_SESSION['difficultyLevel'] >= 7 && $_SESSION['difficultyLevel'] <= 8) {
-    $_SESSION['questionLevel'] = "level4";
+    $_SESSION['currentQuestionmark'] = 6;
 }else {
     echo "Error Occured ! Contact Admin";
 }
+
+echo $_SESSION['difficultyLevel'];
+echo $_SESSION['questionNumber'];
+echo $_SESSION['questionLevel'];
 
 ?>
 <!DOCTYPE html>
@@ -48,8 +50,8 @@ elseif ($_SESSION['difficultyLevel'] >= 7 && $_SESSION['difficultyLevel'] <= 8) 
 
       <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
-          <li class="uk-active"><a href="#">Hi! UserName</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li class="uk-active"><a href="#">Hi! <?php echo $_SESSION['name'] ?></a></li>
+          <li><a href="php/logout.php">Log Out</a></li>
         </ul>
       </div>
     </nav>
@@ -61,60 +63,60 @@ elseif ($_SESSION['difficultyLevel'] >= 7 && $_SESSION['difficultyLevel'] <= 8) 
           <p>
             <?php
                 echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['question'];
+                $_SESSION['correctOption'] = $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['correctOption'];
             ?>
           </p>
          </div>
          <div class="uk-card uk-card-default uk-card-body uk-margin-medium-left uk-overflow-auto">
-          <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
-            <tbody>
-              <tr>
-                <td><input class="uk-checkbox" type="checkbox"></td>
-                <td class="uk-table-link">
-                  <a class="uk-link-reset" href="">
-                    <?php
-                        echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option1'];
-                    ?>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td><input class="uk-checkbox" type="checkbox"></td>
-                <td class="uk-table-link">
-                  <a class="uk-link-reset" href="">
-                    <?php
-                        echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option2'];
-                    ?>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td><input class="uk-checkbox" type="checkbox"></td>
-                <td class="uk-table-link">
-                  <a class="uk-link-reset" href="">
-                    <?php
-                        echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option3'];
-                    ?>
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td><input class="uk-checkbox" type="checkbox"></td>
-                <td class="uk-table-link">
-                  <a class="uk-link-reset" href="">
-                    <?php
-                        echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option4'];
-                    ?>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+             <form method="post" action="php/evaluate.php">
+                 <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+                   <tbody>
+                     <tr>
+                       <td><input class="uk-radio" type="radio" name="selectedOption" value="option1">
+                           <span>
+                               <?php
+                                   echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option1'];
+                               ?>
+                           </span>
+                       </td>
+                     </tr>
+                     <tr>
+                       <td><input class="uk-radio" type="radio" name="selectedOption"  value="option2">
+                           <span>
+                               <?php
+                                   echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option2'];
+                               ?>
+                           </span>
+                       </td>
+                     </tr>
+                     <tr>
+                       <td><input class="uk-radio" type="radio" name="selectedOption"  value="option3">
+                           <span>
+                               <?php
+                                   echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option3'];
+                               ?>
+                           </span>
+                       </td>
+                    </tr>
+                     <tr>
+                       <td><input class="uk-radio" type="radio" name="selectedOption"  value="option4">
+                           <span>
+                               <?php
+                                   echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['option4'];
+                               ?>
+                           </span>
+                       </td>
+                     </tr>
+                   </tbody>
+                 </table>
+
          </div>
        </div>
        <div class="uk-width-1-3">
          <div class="uk-card uk-card-default uk-card-body uk-margin-medium-right">
-           <button class="uk-button uk-button-default uk-margin uk-width-medium">Submit this question</button>
-           <button class="uk-button uk-button-default uk-width-medium">End Test</button>
+           <button class="uk-button uk-button-default uk-margin uk-width-medium" type="submit">Submit this question</button>
+       </form>
+           <a class="uk-button uk-button-default uk-width-medium" href="result.php">End Test</a>
          </div>
        </div>
      </div>
