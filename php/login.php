@@ -1,6 +1,7 @@
 <?php
 // Initialize the session
 session_start();
+$_SESSION['login_err'] = "";
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
@@ -28,6 +29,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check if password is empty
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter your password.";
+        $_SESSION['login_err']  = $password_err;
+        header("location: ../index.php");
     } else{
         $password = trim($_POST["password"]);
     }
@@ -80,15 +83,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: ../instructions.php");
                         } else{
                             // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
+                            $password_err = "The password you entered was not correct.";
+                            $_SESSION['login_err']  = $password_err;
+                            header("location: ../index.php");
                         }
                     }
                 } else{
                     // Display an error message if email doesn't exist
-                    $email_err = "No account found with that email.";
+                    $email_err = "No account found with this email!";
+                    $_SESSION['login_err']  = $email_err;
+                    header("location: ../index.php");
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $_SESSION['login_err']  =  "Oops! Something went wrong. Please try again later.";
+                header("location: ../index.php");
             }
         }
 

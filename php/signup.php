@@ -2,6 +2,9 @@
 // Include config file
 require_once "config.php";
 
+session_start();
+$_SESSION['signup_err'] = "";
+
 // Define variables and initialize with empty values
 $email = $password = $contact_number = $name ="";
 $email_err = $password_err = "";
@@ -11,7 +14,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Validate username
     if(empty(trim($_POST["email"]))){
-        $username_err = "Please enter an email.";
+        $email_err = "Please enter an email.";
+        $_SESSION['signup_err']  = $email_err;
+        header("location: ../index.php");
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE email = ?";
@@ -30,11 +35,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 if($stmt->num_rows == 1){
                     $email_err = "An account is already registered with this email.";
+                    $_SESSION['signup_err']  = $email_err;
+                    header("location: ../index.php");
                 } else{
                     $email = trim($_POST["email"]);
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $_SESSION['signup_err'] = "Oops! Something went wrong. Please try again later.";
+                header("location: ../index.php");
             }
         }
 
@@ -45,8 +53,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate password
     if(empty(trim($_POST["password"]))){
         $password_err = "Please enter a password.";
+        $_SESSION['signup_err']  = $password_err;
+        header("location: ../index.php");
     } elseif(strlen(trim($_POST["password"])) < 6){
         $password_err = "Password must have atleast 6 characters.";
+        $_SESSION['signup_err']  = $password_err;
+        header("location: ../index.php");
     } else{
         $password = trim($_POST["password"]);
     }

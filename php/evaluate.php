@@ -5,7 +5,7 @@
     echo $selectOption;
 
     if ($selectOption == $_SESSION['correctOption']){
-        if ($_SESSION['difficultyLevel']<=6) {
+        if ($_SESSION['difficultyLevel']<6) {
             $_SESSION['difficultyLevel'] = $_SESSION['difficultyLevel']+1;
         }
         $_SESSION['marks'] = $_SESSION['marks'] + $_SESSION['currentQuestionmark'];

@@ -17,16 +17,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Instructions | Project ExamOne</title>
     <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav">
-          <li class="uk-active"><a href="#">Active</a></li>
-          <li><a href="#">Item</a></li>
-        </ul>
-      </div>
-
+    <nav class="uk-navbar uk-background-primary" uk-navbar>
+        <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+              <li>
+                  <a class="uk-text-lead heading" href="#">Dynamic Examination</a>
+              </li>
+          </ul>
+        </div>
       <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
           <li class="uk-active"><a href="#">Hi! <?php echo htmlspecialchars($_SESSION["name"]); ?></a></li>
@@ -37,18 +38,19 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     <div class="uk-margin">
       <div class="uk-margin">
-        <h1 class="uk-heading-primary uk-text-center">Instructions</h1>
-        <div class="uk-card uk-card-default uk-card-body uk-width-1-2">
-            <ul>
-              <li>instruction 1</li>
-              <li>instruction 2</li>
-              <li>instruction 3</li>
-              <li>instruction 4</li>
+          <div>
+              <h1 class="uk-heading-primary uk-text-center">Instructions</h1>
+          </div>
+          <div class="uk-card uk-card-default uk-card-body uk-border-rounded uk-box-shadow-medium uk-margin-large-left uk-margin-large-right">
+              <ul class="uk-list uk-list-bullet">
+                <li>Instructions 1</li>
+                <li>Instructions 2</li>
+                <li>Instructions 3</li>
             </ul>
           </div>
       </div>
-      <div class="uk-margin">
-       <a class="uk-button uk-button-primary" href="test.php">Start Test</a>
+      <div class="uk-margin uk-text-center">
+       <a class="uk-button uk-button-primary uk-border-rounded" href="test.php">Start Test</a>
       </div>
     </div>
 

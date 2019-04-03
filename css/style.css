@@ -1,0 +1,13 @@
+html{
+    background-color: #f8f8f8 !important;
+}
+
+.heading{
+    color: black !important;
+    font-size: 25px !important;
+    font-weight: 800 !important;
+}
+
+.uk-navbar-right ul li a{
+    color: black !important;
+}

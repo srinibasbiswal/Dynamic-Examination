@@ -25,9 +25,9 @@ elseif ($_SESSION['difficultyLevel'] >= 5 && $_SESSION['difficultyLevel'] <= 6) 
     echo "Error Occured ! Contact Admin";
 }
 
-echo $_SESSION['difficultyLevel'];
-echo $_SESSION['questionNumber'];
-echo $_SESSION['questionLevel'];
+// echo $_SESSION['difficultyLevel'];
+// echo $_SESSION['questionNumber'];
+// echo $_SESSION['questionLevel'];
 
 ?>
 <!DOCTYPE html>
@@ -38,15 +38,17 @@ echo $_SESSION['questionLevel'];
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Test | Project ExamOne</title>
     <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav">
-          <li class="uk-active"><a href="#">Active</a></li>
-          <li><a href="#">Item</a></li>
-        </ul>
-      </div>
+    <nav class="uk-navbar uk-background-primary" uk-navbar>
+        <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+              <li>
+                  <a class="uk-text-lead heading" href="#">Dynamic Examination</a>
+              </li>
+          </ul>
+        </div>
 
       <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
@@ -58,8 +60,8 @@ echo $_SESSION['questionLevel'];
 
     <div class="uk-margin">
      <div uk-grid>
-       <div class="uk-width-2-3">
-         <div class="uk-card uk-card-default uk-card-body uk-margin uk-margin-medium-left">
+       <div class="uk-width-2-3@m uk-width-1-1@s">
+         <div class="uk-card uk-card-default uk-card-body uk-margin uk-margin-medium-left uk-border-rounded">
           <p>
             <?php
                 echo $questions[$_SESSION['questionLevel']][$_SESSION['questionNumber']]['question'];
@@ -67,7 +69,7 @@ echo $_SESSION['questionLevel'];
             ?>
           </p>
          </div>
-         <div class="uk-card uk-card-default uk-card-body uk-margin-medium-left uk-overflow-auto">
+         <div class="uk-card uk-card-default uk-card-body uk-margin-medium-left uk-overflow-auto uk-border-rounded">
              <form method="post" action="php/evaluate.php">
                  <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
                    <tbody>
@@ -112,11 +114,11 @@ echo $_SESSION['questionLevel'];
 
          </div>
        </div>
-       <div class="uk-width-1-3">
-         <div class="uk-card uk-card-default uk-card-body uk-margin-medium-right">
-           <button class="uk-button uk-button-default uk-margin uk-width-medium" type="submit">Submit this question</button>
+       <div class="uk-width-1-3@m uk-width-1-1@s">
+         <div class="uk-card uk-card-default uk-card-body uk-margin-medium-right uk-border-rounded">
+           <button class="uk-button uk-button-default uk-margin uk-width-medium uk-button-primary" type="submit">Submit this question</button>
        </form>
-           <a class="uk-button uk-button-default uk-width-medium" href="result.php">End Test</a>
+           <a class="uk-button uk-button-default uk-width-medium uk-button-danger" href="result.php">End Test</a>
          </div>
        </div>
      </div>

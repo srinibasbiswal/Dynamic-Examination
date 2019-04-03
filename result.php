@@ -18,15 +18,17 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Summary | Project ExamOne</title>
     <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-navbar-nav">
-          <li class="uk-active"><a href="#">Active</a></li>
-          <li><a href="#">Item</a></li>
-        </ul>
-      </div>
+        <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+              <li>
+                  <a class="uk-text-lead heading" href="#">Dynamic Examination</a>
+              </li>
+          </ul>
+        </div>
 
       <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
